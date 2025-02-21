@@ -20,7 +20,7 @@
             <div class="md:w-1/2">
                 <h2 class="text-5xl font-bold text-gray-800 mb-6 leading-tight">Take Notes <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Without Losing Focus</span></h2>
                 <p class="text-gray-600 mb-8 text-lg leading-relaxed">Stay engaged in your meetings while keeping your notes organized. Our editor stays on top and adjusts transparency so you can focus on what matters.</p>
-                <button class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-150 text-lg font-semibold">
+                <button class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-150 text-lg font-semibold" onclick="downloadFile()">
                     Try on macOS! - It's Free
                 </button>
             </div>
@@ -64,5 +64,17 @@
             </div>
         </div>
     </main>
+
+    <script>
+        function downloadFile() {
+            const link = document.createElement('a');
+            link.href = 'releases/Notes On Top-1.0.0-arm64.dmg'; // Update with the correct file path
+            link.download = 'Notes On Top-1.0.0-arm64.dmg'; // Update with the correct file name
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+
 </body>
 </html>
